@@ -25,6 +25,10 @@ app.use(function (request, response, next) {
     next();
 });
 
+app.listen(process.env.PORT || 3000, function(){
+  console.log('listening on', http.address().port);
+});
+
 // app.listen(8000, function(){
 // 	console.log("Listening on port 8000");
 // });
