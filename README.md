@@ -3,7 +3,9 @@
 This README outlines the details of collaborating on this Ember application.
 
 # Intro
-This site will be used as a tennis match setup using google maps api to show locations on a map. Users will be able to login, make tennis events, and join tennis events. Tennis players of any age at any level will visit the site to either create events or join events made by friends/family. They do not need an account to view events via search bar, but they will need to make an account to see existing events and create/join events. The Google Maps API will be used to display the location on a map. There will be tables for users and events.
+This site will be used as a tennis match setup. Users will be able to login, make tennis events, and join tennis events. Tennis players of any age at any level will visit the site to either create events or join events made by friends/family. They do not need an account to view events via search bar, view player's profiles, or their events, but they will need to make an account to create/join events. There is an admin page to manage all of the accounts and events.
+
+Uses server side validation with validatorjs.
 
 ## Prerequisites
 
