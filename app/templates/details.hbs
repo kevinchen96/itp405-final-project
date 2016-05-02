@@ -86,12 +86,14 @@
     				    </div>
     				{{/unless}}
                 </div><!-- /.event-details -->
+                {{#if loggedIn}}
                 {{#if notOver}}
                     {{#unless isUser}}
                         <div class="col-xs-2">
                             <button type="button" class="btn btn-primary" disabled={{isJoined}} {{action 'joinEvent'}}>{{if isJoined 'Joined'}} {{unless isJoined 'Join Event'}}</button>
                         </div>
                     {{/unless}}
+                {{/if}}
                 {{/if}}
             </div>
         </div><!-- /.event-row -->

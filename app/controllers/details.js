@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	description: true,
 	notOver: true,
+	loggedIn: true,
 	create: function(){	
 		console.log(this.get('model.date'));
 		var mod = this;
@@ -45,6 +46,9 @@ export default Ember.Controller.extend({
 			else{
 				mod.set('isJoined', false);
 			}
+		}, function(response){
+			console.log("here");
+			mod.set('loggedIn', false);
 		});
 	}.observes('model.id'),
 	date: Ember.computed('model.date', function(){

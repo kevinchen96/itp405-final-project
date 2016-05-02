@@ -357,6 +357,7 @@ define('itp405-final-project/controllers/details', ['exports', 'ember'], functio
 	exports['default'] = _ember['default'].Controller.extend({
 		description: true,
 		notOver: true,
+		loggedIn: true,
 		create: (function () {
 			console.log(this.get('model.date'));
 			var mod = this;
@@ -397,6 +398,9 @@ define('itp405-final-project/controllers/details', ['exports', 'ember'], functio
 				} else {
 					mod.set('isJoined', false);
 				}
+			}, function (response) {
+				console.log("here");
+				mod.set('loggedIn', false);
 			});
 		}).observes('model.id'),
 		date: _ember['default'].computed('model.date', function () {
@@ -5609,6 +5613,67 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
       })();
       var child2 = (function () {
         var child0 = (function () {
+          var child0 = (function () {
+            return {
+              meta: {
+                "fragmentReason": false,
+                "revision": "Ember@2.4.5",
+                "loc": {
+                  "source": null,
+                  "start": {
+                    "line": 91,
+                    "column": 20
+                  },
+                  "end": {
+                    "line": 95,
+                    "column": 20
+                  }
+                },
+                "moduleName": "itp405-final-project/templates/details.hbs"
+              },
+              isEmpty: false,
+              arity: 0,
+              cachedFragment: null,
+              hasRendered: false,
+              buildFragment: function buildFragment(dom) {
+                var el0 = dom.createDocumentFragment();
+                var el1 = dom.createTextNode("                        ");
+                dom.appendChild(el0, el1);
+                var el1 = dom.createElement("div");
+                dom.setAttribute(el1, "class", "col-xs-2");
+                var el2 = dom.createTextNode("\n                            ");
+                dom.appendChild(el1, el2);
+                var el2 = dom.createElement("button");
+                dom.setAttribute(el2, "type", "button");
+                dom.setAttribute(el2, "class", "btn btn-primary");
+                var el3 = dom.createComment("");
+                dom.appendChild(el2, el3);
+                var el3 = dom.createTextNode(" ");
+                dom.appendChild(el2, el3);
+                var el3 = dom.createComment("");
+                dom.appendChild(el2, el3);
+                dom.appendChild(el1, el2);
+                var el2 = dom.createTextNode("\n                        ");
+                dom.appendChild(el1, el2);
+                dom.appendChild(el0, el1);
+                var el1 = dom.createTextNode("\n");
+                dom.appendChild(el0, el1);
+                return el0;
+              },
+              buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
+                var element0 = dom.childAt(fragment, [1, 1]);
+                var morphs = new Array(4);
+                morphs[0] = dom.createAttrMorph(element0, 'disabled');
+                morphs[1] = dom.createElementMorph(element0);
+                morphs[2] = dom.createMorphAt(element0, 0, 0);
+                morphs[3] = dom.createMorphAt(element0, 2, 2);
+                return morphs;
+              },
+              statements: [["attribute", "disabled", ["get", "isJoined", ["loc", [null, [93, 85], [93, 93]]]]], ["element", "action", ["joinEvent"], [], ["loc", [null, [93, 96], [93, 118]]]], ["inline", "if", [["get", "isJoined", ["loc", [null, [93, 124], [93, 132]]]], "Joined"], [], ["loc", [null, [93, 119], [93, 143]]]], ["inline", "unless", [["get", "isJoined", ["loc", [null, [93, 153], [93, 161]]]], "Join Event"], [], ["loc", [null, [93, 144], [93, 176]]]]],
+              locals: [],
+              templates: []
+            };
+          })();
           return {
             meta: {
               "fragmentReason": false,
@@ -5617,11 +5682,11 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
                 "source": null,
                 "start": {
                   "line": 90,
-                  "column": 20
+                  "column": 16
                 },
                 "end": {
-                  "line": 94,
-                  "column": 20
+                  "line": 96,
+                  "column": 16
                 }
               },
               "moduleName": "itp405-final-project/templates/details.hbs"
@@ -5632,41 +5697,20 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
             hasRendered: false,
             buildFragment: function buildFragment(dom) {
               var el0 = dom.createDocumentFragment();
-              var el1 = dom.createTextNode("                        ");
-              dom.appendChild(el0, el1);
-              var el1 = dom.createElement("div");
-              dom.setAttribute(el1, "class", "col-xs-2");
-              var el2 = dom.createTextNode("\n                            ");
-              dom.appendChild(el1, el2);
-              var el2 = dom.createElement("button");
-              dom.setAttribute(el2, "type", "button");
-              dom.setAttribute(el2, "class", "btn btn-primary");
-              var el3 = dom.createComment("");
-              dom.appendChild(el2, el3);
-              var el3 = dom.createTextNode(" ");
-              dom.appendChild(el2, el3);
-              var el3 = dom.createComment("");
-              dom.appendChild(el2, el3);
-              dom.appendChild(el1, el2);
-              var el2 = dom.createTextNode("\n                        ");
-              dom.appendChild(el1, el2);
-              dom.appendChild(el0, el1);
-              var el1 = dom.createTextNode("\n");
+              var el1 = dom.createComment("");
               dom.appendChild(el0, el1);
               return el0;
             },
             buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-              var element0 = dom.childAt(fragment, [1, 1]);
-              var morphs = new Array(4);
-              morphs[0] = dom.createAttrMorph(element0, 'disabled');
-              morphs[1] = dom.createElementMorph(element0);
-              morphs[2] = dom.createMorphAt(element0, 0, 0);
-              morphs[3] = dom.createMorphAt(element0, 2, 2);
+              var morphs = new Array(1);
+              morphs[0] = dom.createMorphAt(fragment, 0, 0, contextualElement);
+              dom.insertBoundary(fragment, 0);
+              dom.insertBoundary(fragment, null);
               return morphs;
             },
-            statements: [["attribute", "disabled", ["get", "isJoined", ["loc", [null, [92, 85], [92, 93]]]]], ["element", "action", ["joinEvent"], [], ["loc", [null, [92, 96], [92, 118]]]], ["inline", "if", [["get", "isJoined", ["loc", [null, [92, 124], [92, 132]]]], "Joined"], [], ["loc", [null, [92, 119], [92, 143]]]], ["inline", "unless", [["get", "isJoined", ["loc", [null, [92, 153], [92, 161]]]], "Join Event"], [], ["loc", [null, [92, 144], [92, 176]]]]],
+            statements: [["block", "unless", [["get", "isUser", ["loc", [null, [91, 30], [91, 36]]]]], [], 0, null, ["loc", [null, [91, 20], [95, 31]]]]],
             locals: [],
-            templates: []
+            templates: [child0]
           };
         })();
         return {
@@ -5680,7 +5724,7 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
                 "column": 16
               },
               "end": {
-                "line": 95,
+                "line": 97,
                 "column": 16
               }
             },
@@ -5703,7 +5747,7 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
             dom.insertBoundary(fragment, null);
             return morphs;
           },
-          statements: [["block", "unless", [["get", "isUser", ["loc", [null, [90, 30], [90, 36]]]]], [], 0, null, ["loc", [null, [90, 20], [94, 31]]]]],
+          statements: [["block", "if", [["get", "notOver", ["loc", [null, [90, 22], [90, 29]]]]], [], 0, null, ["loc", [null, [90, 16], [96, 23]]]]],
           locals: [],
           templates: [child0]
         };
@@ -5719,7 +5763,7 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
               "column": 4
             },
             "end": {
-              "line": 98,
+              "line": 100,
               "column": 8
             }
           },
@@ -5997,7 +6041,7 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
           morphs[15] = dom.createMorphAt(element4, 6, 6);
           return morphs;
         },
-        statements: [["content", "model.name", ["loc", [null, [16, 36], [16, 50]]]], ["content", "creator.first_name", ["loc", [null, [17, 48], [17, 70]]]], ["content", "creator.last_name", ["loc", [null, [17, 71], [17, 92]]]], ["content", "date", ["loc", [null, [24, 35], [24, 45]]]], ["content", "time", ["loc", [null, [28, 35], [28, 45]]]], ["content", "model.address", ["loc", [null, [32, 35], [32, 54]]]], ["content", "model.city", ["loc", [null, [36, 35], [36, 51]]]], ["content", "model.state", ["loc", [null, [40, 35], [40, 52]]]], ["content", "model.zip", ["loc", [null, [44, 35], [44, 50]]]], ["attribute", "class", ["concat", [["subexpr", "if", [["get", "description", ["loc", [null, [51, 26], [51, 37]]]], "active"], [], ["loc", [null, [51, 21], [51, 48]]]]]]], ["element", "action", ["setDescription"], [], ["loc", [null, [51, 53], [51, 80]]]], ["attribute", "class", ["concat", [["subexpr", "unless", [["get", "description", ["loc", [null, [52, 30], [52, 41]]]], "active"], [], ["loc", [null, [52, 21], [52, 52]]]]]]], ["element", "action", ["setCurrent"], [], ["loc", [null, [52, 57], [52, 81]]]], ["block", "if", [["get", "description", ["loc", [null, [54, 14], [54, 25]]]]], [], 0, null, ["loc", [null, [54, 8], [61, 15]]]], ["block", "unless", [["get", "description", ["loc", [null, [62, 18], [62, 29]]]]], [], 1, null, ["loc", [null, [62, 8], [87, 19]]]], ["block", "if", [["get", "notOver", ["loc", [null, [89, 22], [89, 29]]]]], [], 2, null, ["loc", [null, [89, 16], [95, 23]]]]],
+        statements: [["content", "model.name", ["loc", [null, [16, 36], [16, 50]]]], ["content", "creator.first_name", ["loc", [null, [17, 48], [17, 70]]]], ["content", "creator.last_name", ["loc", [null, [17, 71], [17, 92]]]], ["content", "date", ["loc", [null, [24, 35], [24, 45]]]], ["content", "time", ["loc", [null, [28, 35], [28, 45]]]], ["content", "model.address", ["loc", [null, [32, 35], [32, 54]]]], ["content", "model.city", ["loc", [null, [36, 35], [36, 51]]]], ["content", "model.state", ["loc", [null, [40, 35], [40, 52]]]], ["content", "model.zip", ["loc", [null, [44, 35], [44, 50]]]], ["attribute", "class", ["concat", [["subexpr", "if", [["get", "description", ["loc", [null, [51, 26], [51, 37]]]], "active"], [], ["loc", [null, [51, 21], [51, 48]]]]]]], ["element", "action", ["setDescription"], [], ["loc", [null, [51, 53], [51, 80]]]], ["attribute", "class", ["concat", [["subexpr", "unless", [["get", "description", ["loc", [null, [52, 30], [52, 41]]]], "active"], [], ["loc", [null, [52, 21], [52, 52]]]]]]], ["element", "action", ["setCurrent"], [], ["loc", [null, [52, 57], [52, 81]]]], ["block", "if", [["get", "description", ["loc", [null, [54, 14], [54, 25]]]]], [], 0, null, ["loc", [null, [54, 8], [61, 15]]]], ["block", "unless", [["get", "description", ["loc", [null, [62, 18], [62, 29]]]]], [], 1, null, ["loc", [null, [62, 8], [87, 19]]]], ["block", "if", [["get", "loggedIn", ["loc", [null, [89, 22], [89, 30]]]]], [], 2, null, ["loc", [null, [89, 16], [97, 23]]]]],
         locals: [],
         templates: [child0, child1, child2]
       };
@@ -6016,7 +6060,7 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
             "column": 0
           },
           "end": {
-            "line": 100,
+            "line": 102,
             "column": 0
           }
         },
@@ -6054,7 +6098,7 @@ define("itp405-final-project/templates/details", ["exports"], function (exports)
         morphs[1] = dom.createMorphAt(element15, 2, 2);
         return morphs;
       },
-      statements: [["block", "if", [["get", "error", ["loc", [null, [2, 10], [2, 15]]]]], [], 0, null, ["loc", [null, [2, 4], [8, 11]]]], ["block", "unless", [["get", "error", ["loc", [null, [9, 14], [9, 19]]]]], [], 1, null, ["loc", [null, [9, 4], [98, 19]]]]],
+      statements: [["block", "if", [["get", "error", ["loc", [null, [2, 10], [2, 15]]]]], [], 0, null, ["loc", [null, [2, 4], [8, 11]]]], ["block", "unless", [["get", "error", ["loc", [null, [9, 14], [9, 19]]]]], [], 1, null, ["loc", [null, [9, 4], [100, 19]]]]],
       locals: [],
       templates: [child0, child1]
     };
@@ -9842,7 +9886,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("itp405-final-project/app")["default"].create({"name":"itp405-final-project","version":"0.0.0+ca5a8fe4"});
+  require("itp405-final-project/app")["default"].create({"name":"itp405-final-project","version":"0.0.0+bfa67aca"});
 }
 
 /* jshint ignore:end */
