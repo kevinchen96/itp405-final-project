@@ -140,8 +140,9 @@ UserController.getPlayersQuery = function(req, res){
   }
   query += "OR email LIKE '%" + queries[0] + "%' ";
   for(var i = 1; i < queries.length; i++){
-    query += "OR email LIKE '%"  + queries[i] + "%')";
+    query += "OR email LIKE '%"  + queries[i] + "%'";
   }
+  query += ")";
   sequelize.query(query, { type: sequelize.QueryTypes.SELECT})
   .then(function(response) {
     res.json({

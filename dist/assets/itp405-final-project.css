@@ -5845,6 +5845,9 @@ body {
 .results img {
   margin-right: 15px; }
 
+.has-feedback .glyphicon {
+  padding-right: 35px; }
+
 .results a {
   text-decoration: none;
   color: black; }
