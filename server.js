@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 // create app
 var app = express();
 
+
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -25,12 +26,5 @@ app.use(function (request, response, next) {
     next();
 });
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log('listening on', http.address().port);
-});
-
-// app.listen(8000, function(){
-// 	console.log("Listening on port 8000");
-// });
 
 module.exports = app;
