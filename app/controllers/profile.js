@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
 	currentEvents: [],
 	createdEvents: [],
 	pastEvents: [],
-
+	loggedIn: true,
 	user: Ember.computed(function(){
 		var mod = this;
 		$.ajax({
@@ -31,6 +31,9 @@ export default Ember.Controller.extend({
 		 			mod.get('pastEvents').addObject(response.events[i]);
 		 		}
 		 	}
+		 }, function(response){
+		 		mod.set('message', response.responseJSON.message);
+		 		mod.set('loggedIn', false);
 		 });
 	}),
 

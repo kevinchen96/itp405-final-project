@@ -1,4 +1,8 @@
     <div class="container main">
+    {{#unless loggedIn}}
+		<h1>{{message}}</h1>
+	{{/unless}}
+	{{#if loggedIn}}
         <div class="row event-row">
             <div class="col-xs-12 event-details">
                 <div class="row">
@@ -79,4 +83,5 @@
 	            </div>
             </div>
         </div><!-- /.event -->
+       {{/if}}
     </div><!-- /.container, .main -->
