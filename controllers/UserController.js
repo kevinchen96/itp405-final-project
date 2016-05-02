@@ -129,7 +129,7 @@ UserController.updateUser = function (req, res) {
 
 UserController.getPlayersQuery = function(req, res){
   var queries = req.query.queries;
-  var query = "SELECT * FROM users WHERE ";
+  var query = "SELECT * FROM users WHERE admin = false AND (";
   query += "first_name LIKE '%" + queries[0] + "%' ";
   for(var i = 1; i < queries.length; i++){
     query += "OR first_name LIKE '%"  + queries[i] + "%' ";
@@ -140,7 +140,7 @@ UserController.getPlayersQuery = function(req, res){
   }
   query += "OR email LIKE '%" + queries[0] + "%' ";
   for(var i = 1; i < queries.length; i++){
-    query += "OR email LIKE '%"  + queries[i] + "%'";
+    query += "OR email LIKE '%"  + queries[i] + "%')";
   }
   sequelize.query(query, { type: sequelize.QueryTypes.SELECT})
   .then(function(response) {
