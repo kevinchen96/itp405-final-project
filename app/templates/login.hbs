@@ -1,0 +1,32 @@
+<div class="container">
+{{#if error}}
+		<ul>
+			<li class="error">{{error}}</li>
+		</ul>
+	{{/if}}
+	<div class="col-lg-8 well">
+		<h1>Login Form</h1>
+		<hr>
+		<div class="row">
+			<form>
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<label>Email Address</label>
+					{{input type="text" value=email placeholder="Enter Email Address Here.." class="form-control"}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<label>Password</label>
+					{{input type="password" value=password placeholder="Enter Passsword Here.." class="form-control"}}
+						</div>
+					</div>
+					<input type="submit" value="Submit" hidden="hidden" {{action 'loginUser' }}>
+					<button type="button" class="btn btn-lg btn-info" {{action 'loginUser' }} >Login</button>	
+				</div>
+			</form> 
+			<p class="text-center">Don't have an account? {{#link-to 'register'}}Register{{/link-to}}</p>	
+		</div>
+	</div>
+</div>

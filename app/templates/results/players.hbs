@@ -1,0 +1,19 @@
+<div class="container main">
+	<h1>Results for '{{q}}'</h1>
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+        {{#each item as |player|}}
+       		<div class="results">
+                {{#link-to 'player' player.user_id}}
+                    <a href="" style="height: 120px; width = 500px;">
+                        <h4>{{player.first_name}} {{player.last_name}}</h4>  
+                        <p>Email: {{ player.email }}</p>
+                        <p>Rating: {{ player.rating }}</p>
+                        <span class="clearfix"></span>
+                     </a>
+                {{/link-to}}
+            </div>
+    	{{/each}}
+        </div>
+    </div>
+</div>
