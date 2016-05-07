@@ -9886,7 +9886,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("itp405-final-project/app")["default"].create({"name":"itp405-final-project","version":"0.0.0+ada3f491"});
+  require("itp405-final-project/app")["default"].create({"name":"itp405-final-project","version":"0.0.0+0437f2d2"});
 }
 
 /* jshint ignore:end */
